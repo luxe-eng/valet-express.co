@@ -32,4 +32,14 @@ describe('co(* -> yield [])', function(){
       assert.deepEqual(val, [1])
     })
   })
+
+  it('should support spread', function(){
+    return co(function*(){
+      return yield [1, 2, 3];
+    }).spread(function (one, two, three) {
+      assert.deepEqual(one, 1);
+      assert.deepEqual(two, 2);
+      assert.deepEqual(three, 3);
+    })
+  })
 })

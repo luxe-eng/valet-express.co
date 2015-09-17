@@ -1,5 +1,6 @@
 
 var assert = require('assert');
+var bluebird = require('bluebird');
 
 var co = require('..');
 
@@ -54,7 +55,7 @@ describe('co(* -> yield <promise>', function(){
     it('should return a real Promise', function() {
       assert(co(function *(){
         yield { then: function(){} };
-      }) instanceof Promise);
+      }) instanceof bluebird);
     });
   })
 })

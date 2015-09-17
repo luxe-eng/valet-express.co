@@ -1,3 +1,5 @@
+var Promise = require('bluebird');
+
 
 /**
  * slice() reference.
